@@ -1,0 +1,99 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #353533;
+    
+}
+
+@mixin grid-card($image) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #353535;
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: rgba(3, 8, 20, .1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.07rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+    background-size:  cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url($image);
+
+    &:hover{
+        box-shadow: rgba(2, 8, 20, 0.1) 0px .35em 1.17em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+        transform: translateX(-10px) translateY(-3px) scale(1);
+    }
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 260px;
+
+    .card1{
+        @include grid-card('https://source.unsplash.com/random/a');
+       grid-row: span 2 / auto;
+        
+    
+      
+    }
+    .card2{
+        @include grid-card('https://source.unsplash.com/random/b');
+       grid-column: span 2 / auto
+      
+    }
+    .card3{
+        @include grid-card('https://source.unsplash.com/random/c');
+       
+      
+    }
+    .card4{
+        @include grid-card('https://source.unsplash.com/random/d');
+    
+      
+    }
+    .card5{
+        @include grid-card('https://source.unsplash.com/random/e');
+       
+      
+    }
+    .card6{
+        @include grid-card('https://source.unsplash.com/random/f');
+        grid-column: span 2 / auto
+      
+    }
+    .card7{
+        @include grid-card('https://source.unsplash.com/random/g');
+        grid-row: span 2 / auto;
+      
+    }
+    .card8{
+        @include grid-card('https://source.unsplash.com/random/h');
+      
+      
+    }
+    .card9{
+        @include grid-card('https://source.unsplash.com/random/i');
+       
+      
+    }
+    .card10{
+        @include grid-card('https://source.unsplash.com/random/j');
+        grid-column: span 2 / auto;
+    }
+
+
+}
+@media (max-width: 660px){
+    .card4, .card8{
+        grid-column: span 2/ auto;
+    }
+ 
+}
